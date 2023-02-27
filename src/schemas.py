@@ -10,6 +10,7 @@ class Game(BaseModel):
 	id: int
 	name: str
 	description: str
+	publish_year: datetime
 
 	#Use Pydantic's orm_mode
 	class Config:
