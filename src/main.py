@@ -1,13 +1,18 @@
 #Main FastAPI app
 from fastapi import Depends, FastAPI, HTTPException
+from fastapi.staticfiles import StaticFiles
 from sqlalchemy.orm import Session
 
 import crud, models, schemas
 from database import SessionLocal, engine
+from frontend import routes as frontend_routes
 
 models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
+
+app.mount("/static", StaticFiles(directory = "static"), name = "static")
+app.include_router(frontend_routes.router)
 
 @app.get("/healthz")
 async def get_healthz():
