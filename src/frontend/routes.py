@@ -7,6 +7,10 @@ router = APIRouter()
 async def login():
 	return FileResponse("static/login.html")
 
+@router.get("/index")
+async def index():
+	return FileResponse("static/index.html")
+
 @router.get("/CSS/{css_file}")
 async def get_css(css_file: str):
 	return FileResponse(f"static/CSS/{css_file}")
