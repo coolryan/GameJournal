@@ -1,12 +1,4 @@
-body {
-	height: 100%;
-	margin: 0;
-	font-family: Arial, Helvetica, sans-serif;
-	display: grid;
-	justify-items: center;
-	align-items: center;
-	background-color: royalblue;
-}
+/* CSS for Login Page */
 
 /* CSS for Main holder */
 #main-holder {
