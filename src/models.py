@@ -14,3 +14,12 @@ class Game(Base):
 	name = Column(String)
 	description = Column(String)
 	publish_year = Column(Date)
+
+class User(Base):
+	"""docstring for User"""
+	__tablename__ = "User"
+
+	id = Column(Integer, primary_key=True, index=True)
+	username = Column(String, unique=True, index=True)
+	hashed_password = Column(String)
+	is_active = Column(Boolean, default=True)

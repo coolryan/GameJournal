@@ -16,3 +16,20 @@ class Game(BaseModel):
 	class Config:
 		"""docstring for Config"""
 		orm_mode = True
+
+class UserBase(BaseModel):
+	"""docstring for UserBase"""
+	username: str
+
+class UserCreate(UserBase):
+	"""docstring for UserCreate"""
+	password: str
+
+class User(UserBase):
+	"""docstring for User"""
+	id: int
+	is_active: bool
+
+	class Config:
+		"""docstring for Config"""
+		orm_mode = True
