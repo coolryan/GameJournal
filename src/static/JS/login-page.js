@@ -9,10 +9,10 @@ loginButton.addEventListener("click", (e) => {
 
 	if (username === "Juan" && password === "lmnop") {
 		alert("You have successfully logged in.");
-		location.reload("./index.html");
+		location.reload("/index.html");
 	} else {
 		loginErrorMsg.style.opacity = 1;
 		alert("Please. Try Again!")
-		location.reload("./error.html");
+		location.reload("/error.html");
 	}
 })

@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Request
+from fastapi import APIRouter, Request, Form
 from fastapi.responses import FileResponse
 
 router = APIRouter()
@@ -18,3 +18,10 @@ async def get_css(css_file: str):
 @router.get("/JS/{js_file}")
 async def get_js(js_file: str):
 	return FileResponse(f"static/JS/{js_file}")
+
+@router.post("/login")
+async def post_login(username: str = Form(), password: str = Form()):
+	if username == "Juan" and password == "lmnop":
+		return await index();
+	else:
+		return FileResponse("static/error.html");
