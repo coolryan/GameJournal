@@ -1,7 +1,7 @@
 #Create the Pydantic models
 #Create initial Pydantic models / schemas
 from pydantic import BaseModel
-from datetime import datetime, time
+from datetime import date
 
 #Use Pydantic's orm_mode	
 #Create Pydantic models / schemas for reading / returning		
@@ -10,7 +10,7 @@ class Game(BaseModel):
 	id: int
 	name: str
 	description: str
-	publish_year: datetime
+	publish_year: date
 
 	#Use Pydantic's orm_mode
 	class Config:

@@ -1,15 +1,27 @@
 #Main FastAPI app
 from fastapi import Depends, FastAPI, HTTPException
 from fastapi.staticfiles import StaticFiles
+from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
+from starlette.responses import RedirectResponse
 
 import crud, models, schemas
 from database import SessionLocal, engine
 from frontend import routes as frontend_routes
 
+import uvicorn
+
 models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=['*'],
+    allow_methods=["*"],
+    allow_headers=["*"],
+    allow_credentials=True,
+)
 
 app.mount("/static", StaticFiles(directory = "static"), name = "static")
 app.include_router(frontend_routes.router)
@@ -27,6 +39,10 @@ def get_db():
 		db.close()
 
 #Create your FastAPI path operations
+@app.get("/")
+def main():
+    return RedirectResponse(url="/docs/")
+
 @app.get("/games/", response_model=list[schemas.Game])
 def read_games(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
     games = crud.get_games(db, skip=skip, limit=limit)
@@ -55,3 +71,6 @@ def read_user(user_id: int, db: Session = Depends(get_db)):
     if db_user is None:
         raise HTTPException(status_code=404, detail="User not found")
     return db_user
+
+if __name__ == '__main__':
+    uvicorn.run("src.main:app", host="127.0.0.1", port=8000, reload=True)
