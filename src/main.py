@@ -1,27 +1,27 @@
 #Main FastAPI app
 from fastapi import Depends, FastAPI, HTTPException
 from fastapi.staticfiles import StaticFiles
-from fastapi.middleware.cors import CORSMiddleware
+# from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
-from starlette.responses import RedirectResponse
+# from starlette.responses import RedirectResponse
 
 import crud, models, schemas
-from database import SessionLocal, engine
+from database import SessionLocal, engine, get_db
 from frontend import routes as frontend_routes
 
-import uvicorn
+# import uvicorn
 
 models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
 
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=['*'],
-    allow_methods=["*"],
-    allow_headers=["*"],
-    allow_credentials=True,
-)
+# app.add_middleware(
+#     CORSMiddleware,
+#     allow_origins=['*'],
+#     allow_methods=["*"],
+#     allow_headers=["*"],
+#     allow_credentials=True,
+# )
 
 app.mount("/static", StaticFiles(directory = "static"), name = "static")
 app.include_router(frontend_routes.router)
@@ -30,18 +30,10 @@ app.include_router(frontend_routes.router)
 async def get_healthz():
 	return {"message": "Hello Bigger Applications!"}
 
-# Dependency
-def get_db():
-	db = SessionLocal()
-	try:
-		yield db 
-	finally:
-		db.close()
-
 #Create your FastAPI path operations
-@app.get("/")
-def main():
-    return RedirectResponse(url="/docs/")
+# @app.get("/")
+# def main():
+#     return RedirectResponse(url="/docs/")
 
 @app.get("/games/", response_model=list[schemas.Game])
 def read_games(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
@@ -57,7 +49,7 @@ def create_game(game: schemas.Game, db: Session = Depends(get_db)):
 def create_user(user: schemas.UserCreate, db: Session = Depends(get_db)):
     db_user = crud.get_user_username(db, username=user.username)
     if db_user:
-        raise HTTPException(status_code=400, detail="Username already exists")
+        raise HTTPException(status_code=400, detail="username and/or password incorrect")
     return crud.create_user(db=db, user=user)
 
 @app.get("/users/", response_model=schemas.User)
@@ -72,5 +64,5 @@ def read_user(user_id: int, db: Session = Depends(get_db)):
         raise HTTPException(status_code=404, detail="User not found")
     return db_user
 
-if __name__ == '__main__':
-    uvicorn.run("src.main:app", host="127.0.0.1", port=8000, reload=True)
+# if __name__ == '__main__':
+#     uvicorn.run("src.main:app", host="127.0.0.1", port=8000, reload=True)

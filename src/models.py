@@ -24,3 +24,11 @@ class User(Base):
 	username = Column(String(255), unique=True, index=True)
 	hashed_password = Column(String(255), index=True)
 	is_active = Column(Boolean, default=True)
+
+# class UserGame(Base):
+# 	"""docstring for UserGame"""
+# 	id = Column(Integer, primary_key=True, index=True)
+
+
+def hash_password(password: str):
+	return password + "notreallyhashed"

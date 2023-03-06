@@ -1,8 +1,10 @@
 #CRUD utils
 #Read data
 from sqlalchemy.orm import Session
+import models
+from models import hash_password
 
-import models, schemas
+import schemas
 
 def get_game(db: Session, game_id: int):
 	return db.query(models.Game).filter(models.Game.id == game_id).first()
@@ -28,8 +30,8 @@ def create_game(db: Session, game: schemas.Game):
 	return db_game
 
 def create_user(db: Session, user: schemas.UserCreate):
-	faked_hashed_password = user.password + "notreallyhashed"
-	db_user = models.User(username = user.username, hashed_paasword = faked_hashed_password)
+	faked_hashed_password = hash_password(user.password)    
+	db_user = models.User(username = user.username, hashed_password = faked_hashed_password)
 	db.add(db_user)
 	db.commit()
 	db.refresh(db_user)
