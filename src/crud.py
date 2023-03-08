@@ -1,10 +1,8 @@
 #CRUD utils
 #Read data
 from sqlalchemy.orm import Session
-import models
+import models, schemas
 from models import hash_password
-
-import schemas
 
 def get_game(db: Session, game_id: int):
 	return db.query(models.Game).filter(models.Game.id == game_id).first()

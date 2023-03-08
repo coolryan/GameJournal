@@ -64,5 +64,11 @@ def read_user(user_id: int, db: Session = Depends(get_db)):
         raise HTTPException(status_code=404, detail="User not found")
     return db_user
 
+@app.get("/test")
+def test(db: Session = Depends(get_db)):
+    db_user = crud.get_user_username(db, username="blackjack")
+    print(f"Games: {db_user.games}")
+    
+
 # if __name__ == '__main__':
 #     uvicorn.run("src.main:app", host="127.0.0.1", port=8000, reload=True)
