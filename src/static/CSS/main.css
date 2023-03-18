@@ -94,3 +94,27 @@ li {
 		display: block;
 	}
 }
+
+/* Set the max width of the menu wrapper */
+#category-menu {
+	max-width: 250px;
+}
+
+/* remove the margin, padding and list styles of the ul li list */
+#category-menu ul, #category-menu ul li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+/* Adding the border to the parent ul and remove the border bottom */
+#category-menu > ul {
+	border: solid 1px #000;
+	border-bottom: none;
+	background-color: #f5fec2;
+}
+
+/* Apply border bottom to the first level of li list only */
+#category-menu > ul > li {
+	border: solid 1px #000;
+}
