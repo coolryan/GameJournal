@@ -9,6 +9,10 @@ from sqlalchemy.orm import Session
 
 router = APIRouter()
 
+@router.get("/header")
+async def get_header():
+	return FileResponse("static/header.html")
+
 @router.get("/login")
 async def login():
 	return FileResponse("static/login.html")
@@ -24,6 +28,10 @@ async def get_css(css_file: str):
 @router.get("/JS/{js_file}")
 async def get_js(js_file: str):
 	return FileResponse(f"static/JS/{js_file}")
+
+@router.get("/list_games")
+async def get_list_games():
+	return FileResponse("static/list_games.html")
 
 @router.post("/login")
 async def post_login(username: str = Form(), password: str = Form(), db: Session = Depends(get_db)):
