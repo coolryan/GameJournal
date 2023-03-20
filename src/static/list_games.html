@@ -10,53 +10,23 @@ Purpose: To create a page thats lists all games
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>List Games</title>
 	<link rel="stylesheet" type="text/css" href="CSS/main.css">
+	<script src="https://unpkg.com/react@18.2/umd/react.development.js" crossorigin></script> 
+    <script src="https://unpkg.com/react-dom@18.2/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6.26/babel.min.js"></script>
+	<script type="text/babel">
+		 async function get_games() {
+			console.log("get games");
+
+			const response = await fetch('/games/');
+			const games = await response.json();
+			console.log(games);
+		}
+		const root = ReactDOM.createRoot(document.getElementById('react-app'));
+		root.render(<h1>List of All Possible Games</h1>);
+	</script>
 </head>
 <body>
-	<h1>List of All Possible Games</h1>
-
-	<div id="category-menu">
-		<ul class="ul-category">
-			<li>swimming</li>
-			<li>cycling</li>
-			<li>tennis</li>
-			<li>boxing</li>
-			<li>shooting</li>
-			<li>equestrian jumping</li>
-			<li>sailing</li>
-			<li>rhythmic gymnastics</li>
-			<li>sjudo</li>
-			<li>golf</li>
-			<li>snooker</li>
-			<li>basketball</li>
-			<li>football</li>
-			<li>volleyball</li>
-			<li>baseball</li>
-			<li>ski jumping</li>
-			<li>figure skating</li>
-			<li>bobsleigh</li>
-			<li>synchronized swimming</li>
-			<li>rowing</li>
-			<li>kayak slalom</li>
-			<li>biathlon</li>
-			<li>triathalon</li>
-			<li>cross-country skiing</li>
-			<li>downhill skiing</li>
-			<li>snowboarding</li>
-			<li>ice hockey</li>
-			<li>curling</li>
-			<li>table tennis</li>
-			<li>gymnastics</li>
-			<li>bowling</li>
-			<li>athletics</li>
-			<li>freestyle wrestling</li>
-			<li>weightlifting</li>
-			<li>fencing</li>
-			<li>archery</li>
-			<li>badminton</li>
-			<li>field hockey</li>
-			<li>diving</li>
-			<li>cricket</li>
-		</ul>
-	</div>
+	<div id="react-app"></div>
+	<button onclick="get_games()">Get Games</button>
 </body>
 </html>
