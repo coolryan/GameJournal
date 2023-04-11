@@ -11,27 +11,27 @@ router = APIRouter()
 
 @router.get("/header")
 async def get_header():
-	return FileResponse("static/header.html")
+	return FileResponse("game-journal-fe/public/header.html")
 
 @router.get("/login")
 async def login():
-	return FileResponse("static/login.html")
+	return FileResponse("game-journal-fe/public/login.html")
 
 @router.get("/index")
 async def index():
-	return FileResponse("static/index.html")
+	return FileResponse("game-journal-fe/public/index.html")
 
 @router.get("/CSS/{css_file}")
 async def get_css(css_file: str):
-	return FileResponse(f"static/CSS/{css_file}")
+	return FileResponse(f"game-journal-fe/public/CSS/{css_file}")
 
 @router.get("/JS/{js_file}")
 async def get_js(js_file: str):
-	return FileResponse(f"static/JS/{js_file}")
+	return FileResponse(f"game-journal-fe/public/JS/{js_file}")
 
 @router.get("/list_games")
 async def get_list_games():
-	return FileResponse("static/list_games.html")
+	return FileResponse("game-journal-fe/public/list_games.html")
 
 @router.post("/login")
 async def post_login(username: str = Form(), password: str = Form(), db: Session = Depends(get_db)):
