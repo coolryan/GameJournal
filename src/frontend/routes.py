@@ -17,18 +17,6 @@ async def get_header():
 async def login():
 	return FileResponse("game-journal-fe/public/login.html")
 
-@router.get("/index")
-async def index():
-	return FileResponse("game-journal-fe/public/index.html")
-
-@router.get("/CSS/{css_file}")
-async def get_css(css_file: str):
-	return FileResponse(f"game-journal-fe/public/CSS/{css_file}")
-
-@router.get("/JS/{js_file}")
-async def get_js(js_file: str):
-	return FileResponse(f"game-journal-fe/public/JS/{js_file}")
-
 @router.get("/list_games")
 async def get_list_games():
 	return FileResponse("game-journal-fe/public/list_games.html")

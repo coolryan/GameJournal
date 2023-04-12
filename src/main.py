@@ -23,7 +23,7 @@ app = FastAPI()
 #     allow_credentials=True,
 # )
 
-app.mount("/static", StaticFiles(directory = "static"), name = "static")
+app.mount("/static", StaticFiles(directory = "game-journal-fe/build"), name = "static")
 app.include_router(frontend_routes.router)
 
 @app.get("/healthz")
