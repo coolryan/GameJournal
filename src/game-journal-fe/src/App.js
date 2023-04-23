@@ -15,8 +15,15 @@ function Game({name}) {
 
 function App() {
 
-  const initListOfGames = 
-  ["Minecraft", "League of Legends", "Roblox", "Rocket League", "Call of Duty: Modern Warfare",
+  const initListOfGames =
+  [{"name": "Minecraft", 
+    "release_date": "11/18/2011",
+    "genre": "sandbox surivial",
+    "rating": 9.9,
+    "platforms": ["pc", "macos", "linux"],
+    "modes": ["single-player", "multipplayer"]},
+
+    "League of Legends", "Roblox", "Rocket League", "Call of Duty: Modern Warfare",
     "Candy Crush Sage", "Dota2", "Grand Theft Auto V", "Pac-Man", "Resident Evil 4", "Mario Bros.", 
     "Mario Kart 8 Deluxe", "Super Mario Odyssey", "Sper Smash Bros. Ultimate", "Fall Guys", "Overwatch", 
     "Overwatch 2", "Call of duty: Modern Warfare 2", "The Legends of Zelda: Breath of the Wild"];
