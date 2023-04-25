@@ -4,13 +4,29 @@ import {useState} from 'react';
 
 function GameList({listOfGames}) {
 
-  let gameObjects = listOfGames.map((gameName) => (<Game name={gameName}></Game>));
+  let gameObjects = listOfGames.map((gameData) => (<Game gameData={gameData}></Game>));
 
   return <div className="gamelist">{gameObjects}</div>;
 }
 
-function Game({name}) {
-  return <div>{name}</div>
+function Game({gameData}) {
+  return (
+    <div className="gameCard">
+      <div className="gamePic">
+        <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/46b63d3c-ae67-464c-9a37-670829b2a157/d9smalr-af29024f-677d-4420-ab15-fd3d55377042.png/v1/fill/w_512,h_512/call_of_duty_modern_warfare_3___icon_by_blagoicons_d9smalr-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NTEyIiwicGF0aCI6IlwvZlwvNDZiNjNkM2MtYWU2Ny00NjRjLTlhMzctNjcwODI5YjJhMTU3XC9kOXNtYWxyLWFmMjkwMjRmLTY3N2QtNDQyMC1hYjE1LWZkM2Q1NTM3NzA0Mi5wbmciLCJ3aWR0aCI6Ijw9NTEyIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.I8Fm1ItQo5maSBr3sBE0Hsv0nqHGuWUWtfDdM84hnro" alt="call of duty" />
+      </div>
+      <div className="gametext">
+        <div>{gameData.name}</div>
+        <div>{gameData.release_date}</div>
+        <div>{gameData.genre}</div>
+      </div>
+      <div className="iconGroup1">
+        <div>{gameData.rating}</div>
+        <div>{gameData.modes}</div>
+      </div> 
+      <div className="iconGroup2"><div>{gameData.platforms}</div></div>
+    </div>
+  )
 }
 
 function App() {
@@ -31,7 +47,7 @@ function App() {
     "modes": "multiplayer"},
 
     {"name": "Roblox", 
-    "release_date": ["September 1, 2006[", "December 11, 2012", "July 16, 2014", "November 20, 2015"],
+    "release_date": ["September 1, 2006", "December 11, 2012", "July 16, 2014", "November 20, 2015"],
     "genre": ["game creation system", "massively multiplayer online"],
     "rating": 0.8,
     "platforms": ["windows", "macos", "linux"],
@@ -136,7 +152,7 @@ function App() {
     "modes": ["single-player", "multiplayer"]},
 
     {"name": "The Legends of Zelda: Breath of the Wild", 
-    "release_date": "March 3, 20 17",
+    "release_date": "March 3, 2017",
     "genre": "action-adventure",
     "rating": 4.8,
     "platforms": ["nintendo switch", "wii u"],

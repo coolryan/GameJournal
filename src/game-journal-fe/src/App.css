@@ -36,3 +36,41 @@
     transform: rotate(360deg);
   }
 }
+
+/* Game Card CSS */
+.gameCard {
+  background-color: rgba(64, 64, 64, 1);
+  padding: auto;
+  text-align: center;
+  border: black 5px solid;
+  border-radius: 30px;
+}
+
+/* gamePic CSS */
+.gameCard > .gamePic {
+  height: auto;
+  max-width: 100%;
+}
+
+/* gametext CSS */
+.gameCard > .gametext {
+  text-align: center;
+  color: white;
+  font-family: sans-serif;
+}
+
+/* iconGroup1 CSS */
+.gameCard > .iconGroup1 {
+  text-align: center;
+  color: white;
+  height: auto;
+  max-width: 100%;
+}
+
+/* iconGroup2 CSS */
+.gameCard > .iconGroup2 {
+  text-align: center;
+  color: white;
+  height: auto;
+  max-width: 100%;
+}
