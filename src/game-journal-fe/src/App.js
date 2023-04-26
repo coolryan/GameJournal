@@ -6,7 +6,7 @@ function GameList({listOfGames}) {
 
   let gameObjects = listOfGames.map((gameData) => (<Game gameData={gameData}></Game>));
 
-  return <div className="gamelist">{gameObjects}</div>;
+  return <div className="gameList">{gameObjects}</div>;
 }
 
 function Game({gameData}) {
@@ -22,9 +22,14 @@ function Game({gameData}) {
       </div>
       <div className="iconGroup1">
         <div>{gameData.rating}</div>
-        <div>{gameData.modes}</div>
+        {/*<div>{gameData.modes}*/}
+          <img src="https://seekicon.com/free-icon-download/game-controller-outline_1.png" alt="single-player" /><br/>
+          <img src="https://cdn-icons-png.flaticon.com/512/10069/10069229.png" alt="multiplayer" />
+        {/*</div>*/}
       </div> 
-      <div className="iconGroup2"><div>{gameData.platforms}</div></div>
+      <div className="iconGroup2">
+        <div>{gameData.platforms}</div>
+      </div>
     </div>
   )
 }
