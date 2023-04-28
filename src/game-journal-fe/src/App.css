@@ -42,6 +42,9 @@
   height: auto;
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
+  gap: 10px 10px;
+  margin-left: 20px;
 }
 
 /* Game Card CSS */
@@ -50,6 +53,7 @@
   max-width: 400px;
   min-width: 400px;
   padding: auto;
+  margin: auto;
   border: black 5px solid;
   border-radius: 30px;
   display: grid;
@@ -65,33 +69,41 @@
 }
 
 .gameCard > .gamePic img {
-  height: 50px;
+  height: 400px;
   max-width: 100%;
   grid-area: gamepic;
 }
 
 /* gametext CSS */
 .gameCard > .gametext {
-  text-align: center;
   color: white;
   font-family: sans-serif;
   grid-area: gametext;
+  text-transform: capitalize;
 }
 
 /* iconGroup1 CSS */
 .gameCard > .iconGroup1 {
-  color: white;
+  position: relative;
   height: auto;
   max-width: 100%;
   grid-area: icongroup1;
 }
 
+.gameCard > .iconGroup1 > .ratingGroup > .ratingtext{
+  position: absolute;
+  left: 14px;
+  top: 20px;
+  color: black;
+}
+
 .gameCard > .iconGroup1 img {
   height: 50px;
   max-width: 100%;
+  grid-area: icongroup1;
 }
 
-.gameCard > .iconGroup1 img #rating_icon {
+.gameCard > .iconGroup1 img > .rating_icon {
   height: auto;
   max-width: 100%;
   grid-area: icongroup1;
