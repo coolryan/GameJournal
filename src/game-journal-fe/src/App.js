@@ -10,25 +10,31 @@ function GameList({listOfGames}) {
 }
 
 function Game({gameData}) {
+
   return (
     <div className="gameCard">
       <div className="gamePic">
         <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/46b63d3c-ae67-464c-9a37-670829b2a157/d9smalr-af29024f-677d-4420-ab15-fd3d55377042.png/v1/fill/w_512,h_512/call_of_duty_modern_warfare_3___icon_by_blagoicons_d9smalr-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NTEyIiwicGF0aCI6IlwvZlwvNDZiNjNkM2MtYWU2Ny00NjRjLTlhMzctNjcwODI5YjJhMTU3XC9kOXNtYWxyLWFmMjkwMjRmLTY3N2QtNDQyMC1hYjE1LWZkM2Q1NTM3NzA0Mi5wbmciLCJ3aWR0aCI6Ijw9NTEyIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.I8Fm1ItQo5maSBr3sBE0Hsv0nqHGuWUWtfDdM84hnro" alt="call of duty" />
       </div>
       <div className="gametext">
-        <div>{gameData.name}</div>
-        <div>{gameData.release_date}</div>
+        <div>{gameData.name}</div><br/>
+        <div>{gameData.release_date}</div><br/>
         <div>{gameData.genre}</div>
       </div>
       <div className="iconGroup1">
-        <div>{gameData.rating}</div>
+        <div><img id="rating_icon" src="https://pixlok.com/wp-content/uploads/2021/07/Rating-SVG-Icon-s9fd.png" alt="rating-iconr" />{gameData.rating}</div>
         {/*<div>{gameData.modes}*/}
           <img src="https://seekicon.com/free-icon-download/game-controller-outline_1.png" alt="single-player" /><br/>
           <img src="https://cdn-icons-png.flaticon.com/512/10069/10069229.png" alt="multiplayer" />
         {/*</div>*/}
       </div> 
       <div className="iconGroup2">
-        <div>{gameData.platforms}</div>
+        <div>
+          {/*{gameData.platforms}*/}
+          <img src="https://static.vecteezy.com/system/resources/previews/019/638/649/original/microsoft-windows-os-icon-operating-system-free-png.png" alt="windows-icon" />
+          <img src="https://upload.wikimedia.org/wikipedia/commons/c/c9/Finder_Icon_macOS_Big_Sur.png" alt="macOS-icon" />
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Icons8_flat_linux.svg/1200px-Icons8_flat_linux.svg.png" alt="linuxs-icon" />
+        </div>
       </div>
     </div>
   )
@@ -69,7 +75,7 @@ function App() {
     "release_date": "November 5, 2007",
     "genre": "first-person shooter",
     "rating": 3.3,
-    "platforms": ["windows", "macos", "playstation 3", "xbox 360", "wii"],
+    "platforms": ["windows", "macos", "playstation 3", "xbox 360", "wii u"],
     "modes": ["single-player", "multiplayer"]},
 
     {"name": "Candy Crush Sage", 

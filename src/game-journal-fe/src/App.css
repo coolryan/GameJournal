@@ -61,13 +61,18 @@
 
 /* gamePic CSS */
 .gameCard > .gamePic {
-/*  height: 50px;*/
-/*  max-width: 100%;*/
+  grid-area: gamepic;
+}
+
+.gameCard > .gamePic img {
+  height: 50px;
+  max-width: 100%;
   grid-area: gamepic;
 }
 
 /* gametext CSS */
 .gameCard > .gametext {
+  text-align: center;
   color: white;
   font-family: sans-serif;
   grid-area: gametext;
@@ -86,10 +91,19 @@
   max-width: 100%;
 }
 
+.gameCard > .iconGroup1 img #rating_icon {
+  height: auto;
+  max-width: 100%;
+  grid-area: icongroup1;
+}
+
 /* iconGroup2 CSS */
 .gameCard > .iconGroup2 {
-  color: white;
-  height: auto;
+  grid-area: icongroup2;
+}
+
+.gameCard > .iconGroup2 img {
+  height: 50px;
   max-width: 100%;
   grid-area: icongroup2;
 }
