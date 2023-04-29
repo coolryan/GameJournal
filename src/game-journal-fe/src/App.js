@@ -164,7 +164,7 @@ function App() {
     "modes": ["single-player", "multiplayer"],
     "publishers": "Nintendo",
     "developers": ["Nintendo EAD", "Nintendo EPD"],
-    "imageSrc": "https://cms.gameflycdn.com/proxy/gf/boxart/480w/5012925.jpg"
+    "imageSrc": "https://assets1.ignimgs.com/2019/05/31/mario-kart-8---button-1559265583134.jpg"
     },
 
     {"name": "Super Mario Odyssey", 
