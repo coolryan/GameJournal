@@ -38,6 +38,16 @@ function Game({gameData}) {
         <img src="https://static.vecteezy.com/system/resources/previews/019/638/649/original/microsoft-windows-os-icon-operating-system-free-png.png" alt="windows-icon" />
         <img src="https://upload.wikimedia.org/wikipedia/commons/c/c9/Finder_Icon_macOS_Big_Sur.png" alt="macOS-icon" />
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Icons8_flat_linux.svg/1200px-Icons8_flat_linux.svg.png" alt="linuxs-icon" />
+        <img src="https://freepngimg.com/download/iphone/68525-apple-network-icons-ios-computer-iphone-graphics.png" alt="IOS-icon" />
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174836.png" alt="andriod-icon" />
+        <img src="https://cdn3.iconfinder.com/data/icons/flat-icons-web/40/XBox-512.png" alt="xbox-icon" />
+        <img src="https://cdn-icons-png.flaticon.com/512/588/588258.png" alt="playstation-icon" />
+        <img src="https://cdn2.iconfinder.com/data/icons/electrical-devices-2/60/devices-flat-052-switch-complete-left-512.png" alt="nintendo_switch-icon" />
+        <img src="https://cdn-icons-png.flaticon.com/512/39/39462.png" alt="will_u-icon" />
+        <img src="https://www.macworld.com/wp-content/uploads/2023/01/mac-app-store-icon-1.png" alt="app_store-icon" />
+        <img src="https://logos-world.net/wp-content/uploads/2020/12/Google-Play-icon-logo.png" alt="google_play-icon" />
+        <img src="https://seeklogo.com/images/M/microsoft-store-new-2022-logo-E0E195EEF5-seeklogo.com.png" alt="windows_phone_store-icon" />
+        <img src="https://cdn-icons-png.flaticon.com/512/68/68802.png" alt="ports-icon" />
       </div>
     </div>
   )
@@ -109,7 +119,7 @@ function App() {
     "modes": "N/A",
     "publishers": "King",
     "developers": "King",
-    "imageSrc": "https://s3.eu-west-2.amazonaws.com/img.creativepool.com/files/candidate/portfolio/full/617146.png"
+    "imageSrc": "https://images.launchbox-app.com/d12f6333-69f7-4ed6-9782-72ac69e47292.png"
     },
 
     {"name": "Dota2", 
