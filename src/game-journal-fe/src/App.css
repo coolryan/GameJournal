@@ -15,16 +15,15 @@
 /* Game Card CSS */
 .gameCard {
   background-color: rgba(64, 64, 64, 1);
-  max-width: 400px;
-  min-width: 400px;
+  width: 400px;
   padding: auto;
   margin: auto;
   border: black 5px solid;
   border-radius: 30px;
   display: grid;
-  grid-template-areas: 'gamepic gamepic gamepic gamepic'
-                       'icongroup1 gametext gametext gametext'
-                       'icongroup2 icongroup2 icongroup2 icongroup2';
+  grid-template-areas: 'gamepic gamepic gamepic'
+                       'icongroup1 gametext gametext'
+                       'icongroup2 icongroup2 icongroup2';
   gap: 10px;
 }
 
@@ -46,7 +45,7 @@
   font-family: sans-serif;
   grid-area: gametext;
   text-transform: capitalize;
-  text-align: center;
+  text-justify: left;
 }
 
 /* iconGroup1 CSS */
@@ -86,4 +85,5 @@
   height: 50px;
   max-width: 100%;
   grid-area: icongroup2;
+  left: 14px;
 }

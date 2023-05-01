@@ -18,7 +18,7 @@ function Game({gameData}) {
       </div>
       <div className="gametext">
         <div>{gameData.name}</div><br/>
-        <div>{gameData.release_date}</div><br/>
+        <div>{gameData.release_date[0]}</div><br/>
         <div>{gameData.genre}</div><br/>
         <div>{gameData.publishers}</div><br/>
         <div>{gameData.developers}</div>
@@ -29,25 +29,83 @@ function Game({gameData}) {
           <img className="rating_icon" src="https://pixlok.com/wp-content/uploads/2021/07/Rating-SVG-Icon-s9fd.png" alt="rating-iconr" />
         </div>
         {/*<div>{gameData.modes}*/}
-          <img src="https://seekicon.com/free-icon-download/game-controller-outline_1.png" alt="single-player" /><br/>
+        {
+          gameData.modes.includes("single-player") && 
+          <img src="https://seekicon.com/free-icon-download/game-controller-outline_1.png" alt="single-player" />
+        }
+          <br/>
+        {
+          gameData.modes.includes("multiplayer") && 
           <img src="https://cdn-icons-png.flaticon.com/512/10069/10069229.png" alt="multiplayer" />
+        }
         {/*</div>*/}
       </div> 
       <div className="iconGroup2">
         {/*{gameData.platforms}*/}
-        <img src="https://static.vecteezy.com/system/resources/previews/019/638/649/original/microsoft-windows-os-icon-operating-system-free-png.png" alt="windows-icon" />
-        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c9/Finder_Icon_macOS_Big_Sur.png" alt="macOS-icon" />
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Icons8_flat_linux.svg/1200px-Icons8_flat_linux.svg.png" alt="linuxs-icon" />
-        <img src="https://freepngimg.com/download/iphone/68525-apple-network-icons-ios-computer-iphone-graphics.png" alt="IOS-icon" />
-        <img src="https://cdn-icons-png.flaticon.com/512/174/174836.png" alt="andriod-icon" />
-        <img src="https://cdn3.iconfinder.com/data/icons/flat-icons-web/40/XBox-512.png" alt="xbox-icon" />
-        <img src="https://cdn-icons-png.flaticon.com/512/588/588258.png" alt="playstation-icon" />
-        <img src="https://cdn2.iconfinder.com/data/icons/electrical-devices-2/60/devices-flat-052-switch-complete-left-512.png" alt="nintendo_switch-icon" />
-        <img src="https://cdn-icons-png.flaticon.com/512/39/39462.png" alt="will_u-icon" />
-        <img src="https://www.macworld.com/wp-content/uploads/2023/01/mac-app-store-icon-1.png" alt="app_store-icon" />
-        <img src="https://logos-world.net/wp-content/uploads/2020/12/Google-Play-icon-logo.png" alt="google_play-icon" />
-        <img src="https://seeklogo.com/images/M/microsoft-store-new-2022-logo-E0E195EEF5-seeklogo.com.png" alt="windows_phone_store-icon" />
-        <img src="https://cdn-icons-png.flaticon.com/512/68/68802.png" alt="ports-icon" />
+      {
+        gameData.platforms.includes("windows") && 
+        <img src="https://static.vecteezy.com/system/resources/previews/019/638/649/original/microsoft-windows-os-icon-operating-system-free-png.png" alt="windows" />
+      }
+
+      {
+        gameData.platforms.includes("macos") && 
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c9/Finder_Icon_macOS_Big_Sur.png" alt="macos" />
+      }
+
+      {
+        gameData.platforms.includes("linux") && 
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Icons8_flat_linux.svg/1200px-Icons8_flat_linux.svg.png" alt="linux" />
+      }
+      
+      {
+        gameData.platforms.includes("ios") && 
+        <img src="https://freepngimg.com/download/iphone/68525-apple-network-icons-ios-computer-iphone-graphics.png" alt="ios" />
+      }  
+      
+      {
+        gameData.platforms.includes("andriod") && 
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174836.png" alt="andriod" />
+      }   
+      
+      {
+        gameData.platforms.includes("xbox") && 
+        <img src="https://cdn3.iconfinder.com/data/icons/flat-icons-web/40/XBox-512.png" alt="xbox" />
+      }    
+       
+      {
+        gameData.platforms.includes("playstation") && 
+        <img src="https://cdn-icons-png.flaticon.com/512/588/588258.png" alt="playstation" />
+      }   
+      
+      {
+        gameData.platforms.includes("nintendo switch") && 
+        <img src="https://cdn2.iconfinder.com/data/icons/electrical-devices-2/60/devices-flat-052-switch-complete-left-512.png" alt="nintendo switch" />
+      }   
+      
+      {
+        gameData.platforms.includes("will u") && 
+        <img src="https://cdn-icons-png.flaticon.com/512/39/39462.png" alt="will u" />
+      }  
+      
+      {
+        gameData.platforms.includes("app store") && 
+        <img src="https://www.macworld.com/wp-content/uploads/2023/01/mac-app-store-icon-1.png" alt="app store" />
+      }  
+      
+      {
+        gameData.platforms.includes("google play") && 
+        <img src="https://logos-world.net/wp-content/uploads/2020/12/Google-Play-icon-logo.png" alt="google play" />
+      }  
+      
+      {
+        gameData.platforms.includes("windows phone store") && 
+        <img src="https://seeklogo.com/images/M/microsoft-store-new-2022-logo-E0E195EEF5-seeklogo.com.png" alt="windows phone store" />
+      }  
+      
+      {
+        gameData.platforms.includes("ports") && 
+        <img src="https://cdn-icons-png.flaticon.com/512/68/68802.png" alt="ports" />
+      }  
       </div>
     </div>
   )
@@ -57,8 +115,8 @@ function App() {
 
   const initListOfGames = [
     {"name": "Minecraft", 
-    "release_date": "November 18, 2011",
-    "genre": "sandbox surivial",
+    "release_date": ["November 18, 2011"],
+    "genre": ["sandbox surivial"],
     "rating": 9.3,
     "platforms": ["windows", "macos", "linux"],
     "modes": ["single-player", "multiplayer"],
@@ -69,10 +127,10 @@ function App() {
 
     {"name": "League of Legends", 
     "release_date": ["October 27, 2009", "March 1, 2013"],
-    "genre": "MOBA",
+    "genre": ["MOBA"],
     "rating": 2.9,
     "platforms": ["windows", "macos", "ios", "android", "xbox one"],
-    "modes": "multiplayer",
+    "modes": ["multiplayer"],
     "publishers": "Riot Games",
     "developers": "Riot Games",
     "imageSrc": "https://i.pinimg.com/originals/ce/19/25/ce19251d6b0fc80e7964da087254f79e.png"
@@ -90,8 +148,8 @@ function App() {
     },
 
     {"name": "Rocket League", 
-    "release_date": "July 7, 2015",
-    "genre": "sports",
+    "release_date": ["July 7, 2015"],
+    "genre": ["sports"],
     "rating": 3.8,
     "platforms": ["windows", "macos", "linux", "playstation 4", "xbox one", "nintendo switch"],
     "modes": ["single-player", "multiplayer"],
@@ -101,8 +159,8 @@ function App() {
     },
 
     {"name": "Call of Duty: Modern Warfare", 
-    "release_date": "November 5, 2007",
-    "genre": "first-person shooter",
+    "release_date": ["November 5, 2007"],
+    "genre": ["first-person shooter"],
     "rating": 3.3,
     "platforms": ["windows", "macos", "playstation 3", "xbox 360", "wii u"],
     "modes": ["single-player", "multiplayer"],
@@ -113,10 +171,10 @@ function App() {
 
     {"name": "Candy Crush Sage", 
     "release_date": ["April 12, 2012", "November 14, 2012", "December 14, 2012", "December 11, 2014", "September 6, 2012", "July 29, 2015"],
-    "genre": "puzzle",
+    "genre": ["puzzle"],
     "rating": 0.4,
     "platforms": ["windows", "windows phone store", "macos", "lunux", "app store", "google play"],
-    "modes": "N/A",
+    "modes": ["N/A"],
     "publishers": "King",
     "developers": "King",
     "imageSrc": "https://images.launchbox-app.com/d12f6333-69f7-4ed6-9782-72ac69e47292.png"
@@ -124,18 +182,18 @@ function App() {
 
     {"name": "Dota2", 
     "release_date": ["July 9, 2013", "July 18, 2013"],
-    "genre": "MOBA",
+    "genre": ["MOBA"],
     "rating": 4.4,
     "platforms": ["windows", "macos", "lunux"],
-    "modes": "multiplayer",
+    "modes": ["multiplayer"],
     "publishers": "Valve",
     "developers": "Valve",
     "imageSrc": "https://i.pinimg.com/originals/2d/cd/80/2dcd80c6f5a21a437313adde93b373d8.png"
     },
 
     {"name": "Grand Theft Auto V", 
-    "release_date": "17 September 2013",
-    "genre": "action-adventure",
+    "release_date": ["17 September 2013"],
+    "genre": ["action-adventure"],
     "rating": 4.4,
     "platforms": ["windows", "playstation 3", "playstation 4", "playstation 5", "xbox 360", "xbox one", "xbox series x/s"],
     "modes": ["single-player", "multiplayer"],
@@ -146,21 +204,21 @@ function App() {
 
     {"name": "Pac-Man/Pac-man World Re-Pac", 
     "release_date": ["May 22, 1980", "August 26, 2022"],
-    "genre": "N/A",
-    "rating": [5.5, 6.5],
-    "platforms": "ports",
-    "modes": "Maze",
+    "genre": ["N/A"],
+    "rating": 6.5,
+    "platforms": ["ports"],
+    "modes": ["Maze"],
     "publishers": ["Namco", "Bandai Namco Entertainment"],
     "developers": ["Namco", "Bandai Namco Studios"],
     "imageSrc": "https://cdn.wikimg.net/en/strategywiki/images/6/68/PM_flyer_artwork.png"
     },
 
     {"name": "Resident Evil 4", 
-    "release_date": "March 24, 2023",
-    "genre": "survival horror",
+    "release_date": ["March 24, 2023"],
+    "genre": ["survival horror"],
     "rating": 9.3,
     "platforms": ["windows", "playstation 3", "playstation 4", "playstation 5", "xbox series x/s"],
-    "modes": "single-player",
+    "modes": ["single-player"],
     "publishers": "Capcom",
     "developers": "Capcom Production Studio 4",
     "imageSrc": "https://www.vrbeginnersguide.com/wp-content/uploads/2022/05/VRBG-Featured-Image-Resident-Evil-4-Oculus-Quest-2-Review-2022.png"
@@ -168,7 +226,7 @@ function App() {
 
     {"name": "Mario Kart 8 Deluxe", 
     "release_date": ["May 29, 2014", "May 30, 2014", "April 28, 2017"],
-    "genre": "kart racing",
+    "genre": ["kart racing"],
     "rating": 4.0,
     "platforms": ["wii u", "nintendo switch"],
     "modes": ["single-player", "multiplayer"],
@@ -178,10 +236,10 @@ function App() {
     },
 
     {"name": "Super Mario Odyssey", 
-    "release_date": "October 27, 2017",
+    "release_date": ["October 27, 2017"],
     "genre": ["platform", "action-adventure"],
     "rating": 4.7,
-    "platforms": "nintendo switch",
+    "platforms": ["nintendo switch"],
     "modes": ["single-player", "multiplayer"],
     "publishers": "Nintendo",
     "developers": "Nintendo EPD",
@@ -189,10 +247,10 @@ function App() {
     },
 
     {"name": "Super Smash Bros. Ultimate", 
-    "release_date": "December 7, 2018",
-    "genre": "fighting",
+    "release_date": ["December 7, 2018"],
+    "genre": ["fighting"],
     "rating": 4.3,
-    "platforms": "nintendo switch",
+    "platforms": ["nintendo switch"],
     "modes": ["single-player", "multiplayer"],
     "publishers": "Nintendo",
     "developers": ["Bandai Namco Studios", "Sora Ltd."],
@@ -204,7 +262,7 @@ function App() {
     "genre": ["battle royale", "platform"],
     "rating": 4.2,
     "platforms": ["windows", "playstation 3", "playstation 4", "playstation 5", "xbox series x/s" , "xbox one", "nintendo switch"],
-    "modes": "multiplayer",
+    "modes": ["multiplayer"],
     "publishers": ["Devolver Digital", "Epic Games"],
     "developers": "Mediatonic",
     "imageSrc": "https://cdn2.unrealengine.com/fallguys-ss2-primary-1909x1189-4c9d6a0f3f3c.png"
@@ -222,11 +280,11 @@ function App() {
     },
 
     {"name": "Overwatch 2",  
-    "release_date": "October 4, 2022",
-    "genre": "first-person shooter",
+    "release_date": ["October 4, 2022"],
+    "genre": ["first-person shooter"],
     "rating": 1.9,
     "platforms": ["windows", "macos", "playstation 4", "playstation 5", "xbox one","xbox series x/s"],
-    "modes": "multiplayer",
+    "modes": ["multiplayer"],
     "publishers": "Blizzard Entertainment",
     "developers": "Blizzard Entertainment",
     "imageSrc": "https://blz-contentstack-images.akamaized.net/v3/assets/bltf408a0557f4e4998/blt2103e5cde877112f/62a27a6a6eb6de7d054a5ae0/Overwatch2_Secondary_DKBKGD.png"
@@ -234,7 +292,7 @@ function App() {
 
     {"name": "Call of duty: Modern Warfare 2", 
     "release_date": ["November 10, 2009", "May 20, 2014", "March 30, 2020", "April 30, 2020"],
-    "genre": "first-person shooter",
+    "genre": ["first-person shooter"],
     "rating": 8.0,
     "platforms": ["windows", "playstation 3","playstation 4", "playstation", "xbox 360", "xbox one"],
     "modes": ["single-player", "multiplayer"],
@@ -244,11 +302,11 @@ function App() {
     },
 
     {"name": "The Legends of Zelda: Breath of the Wild", 
-    "release_date": "March 3, 2017",
+    "release_date": ["March 3, 2017"],
     "genre": "action-adventure",
     "rating": 4.8,
     "platforms": ["nintendo switch", "wii u"],
-    "modes": "single-player",
+    "modes": ["single-player"],
     "publishers": "Nintendo",
     "developers": "Nintendo EPD",
     "imageSrc": "https://www.zelda.com/breath-of-the-wild/assets/img/buy/digital-edition.png"

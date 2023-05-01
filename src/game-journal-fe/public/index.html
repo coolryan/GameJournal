@@ -21,6 +21,7 @@ Purpose: creating homepage from react
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -33,7 +34,10 @@ Purpose: creating homepage from react
     <title>React App</title>
   </head>
   <body>
-    <h1><i>Welcome To Game Journal</i></h1>
+    <header>
+      <iconify-icon icon="fa6-solid:book-journal-whills"></iconify-icon>
+      <h1><i>Welcome To Game Journal</i></h1>
+    </header>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <!--
