@@ -16,6 +16,11 @@ Purpose: creating homepage from react
       content="Web site created using create-react-app"
     />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <style type="text/css">
+      .titleHeader > h1, i {
+        
+      }
+    </style>
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
@@ -36,7 +41,7 @@ Purpose: creating homepage from react
   <body>
     <header>
       <iconify-icon icon="fa6-solid:book-journal-whills"></iconify-icon>
-      <h1><i>Welcome To Game Journal</i></h1>
+      <div className="titleHeader"><h1><i>Welcome To Game Journal</i></h1></div>
     </header>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>

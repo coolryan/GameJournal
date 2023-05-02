@@ -78,6 +78,8 @@
 
 /* iconGroup2 CSS */
 .gameCard > .iconGroup2 {
+  position: relative;
+  left: 14px;
   grid-area: icongroup2;
 }
 
@@ -85,5 +87,10 @@
   height: 50px;
   max-width: 100%;
   grid-area: icongroup2;
-  left: 14px;
+}
+
+/* About Game Journal link button CSS */
+.aboutGameJournal > button {
+  background-color: teal;
+  border-radius: 30px;
 }

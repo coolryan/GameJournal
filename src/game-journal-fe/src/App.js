@@ -11,6 +11,8 @@ function GameList({listOfGames}) {
 
 function Game({gameData}) {
 
+  const i = 0;
+
   return (
     <div className="gameCard">
       <div className="gamePic">
@@ -18,7 +20,7 @@ function Game({gameData}) {
       </div>
       <div className="gametext">
         <div>{gameData.name}</div><br/>
-        <div>{gameData.release_date[0]}</div><br/>
+        <div>{gameData.release_date[i]}</div><br/>
         <div>{gameData.genre}</div><br/>
         <div>{gameData.publishers}</div><br/>
         <div>{gameData.developers}</div>
@@ -106,6 +108,13 @@ function Game({gameData}) {
         gameData.platforms.includes("ports") && 
         <img src="https://cdn-icons-png.flaticon.com/512/68/68802.png" alt="ports" />
       }  
+      </div>
+      <div className="aboutGameJournal">
+        <button>
+          <a href="/public/aboutGameJournal.html">
+            About Game Journal
+          </a>
+        </button>
       </div>
     </div>
   )
