@@ -94,3 +94,9 @@ li {
 		display: block;
 	}
 }
+
+/* About Game Journal link button CSS */
+.aboutGameJournal > button {
+  background-color: teal;
+  border-radius: 30px;
+}

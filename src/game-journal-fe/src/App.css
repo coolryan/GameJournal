@@ -46,6 +46,7 @@
   grid-area: gametext;
   text-transform: capitalize;
   text-justify: left;
+  text-align: center;
 }
 
 /* iconGroup1 CSS */
@@ -89,8 +90,7 @@
   grid-area: icongroup2;
 }
 
-/* About Game Journal link button CSS */
-.aboutGameJournal > button {
-  background-color: teal;
-  border-radius: 30px;
+/* Title header CSS */
+.titleHeader > h1 {
+  text-align: center;
 }

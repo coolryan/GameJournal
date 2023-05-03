@@ -2,6 +2,17 @@ import logo from './logo.svg';
 import './App.css';
 import {useState} from 'react';
 
+function Header() {
+  return (
+    <header>
+      <iconify-icon icon="fa6-solid:book-journal-whills"></iconify-icon>
+      <div className="titleHeader">
+        <h1><i>Welcome To Game Journal</i></h1>
+      </div>
+    </header>
+  )
+}
+
 function GameList({listOfGames}) {
 
   let gameObjects = listOfGames.map((gameData) => (<Game gameData={gameData}></Game>));
@@ -11,7 +22,7 @@ function GameList({listOfGames}) {
 
 function Game({gameData}) {
 
-  const i = 0;
+  const releaseDateIndex = 0;
 
   return (
     <div className="gameCard">
@@ -20,7 +31,7 @@ function Game({gameData}) {
       </div>
       <div className="gametext">
         <div>{gameData.name}</div><br/>
-        <div>{gameData.release_date[i]}</div><br/>
+        <div>{gameData.release_date[releaseDateIndex]}</div><br/>
         <div>{gameData.genre}</div><br/>
         <div>{gameData.publishers}</div><br/>
         <div>{gameData.developers}</div>
@@ -65,18 +76,43 @@ function Game({gameData}) {
       }  
       
       {
-        gameData.platforms.includes("andriod") && 
-        <img src="https://cdn-icons-png.flaticon.com/512/174/174836.png" alt="andriod" />
+        gameData.platforms.includes("android") && 
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174836.png" alt="android" />
       }   
       
       {
-        gameData.platforms.includes("xbox") && 
-        <img src="https://cdn3.iconfinder.com/data/icons/flat-icons-web/40/XBox-512.png" alt="xbox" />
-      }    
+        gameData.platforms.includes("xbox one") && 
+        <img src="https://cdn3.iconfinder.com/data/icons/flat-icons-web/40/XBox-512.png" alt="xbox one" />
+      }
+
+      {
+        gameData.platforms.includes("xbox 360") && 
+        <img src="https://www.clipartmax.com/png/small/61-610507_xbox-controller-icons-xbox-360.png" alt="xbox 360" />
+      }
+
+      {
+        gameData.platforms.includes("xbox series x/s") && 
+        <img src="https://assets.xboxservices.com/assets/7d/da/7ddab0fc-f5e7-4bd9-8230-55f9bc51d9f4.jpg?n=Game-Hub_Content-Placement-0_Consoles_740x417_02.jpg" alt="xbox series x/s" />
+      }      
        
       {
         gameData.platforms.includes("playstation") && 
         <img src="https://cdn-icons-png.flaticon.com/512/588/588258.png" alt="playstation" />
+      }
+
+      {
+        gameData.platforms.includes("playstation 3") && 
+        <img src="https://cdn2.steamgriddb.com/file/sgdb-cdn/icon_thumb/5de310fd9365cd111d778791085b1eb3.png" alt="playstation 3" />
+      }
+
+      {
+        gameData.platforms.includes("playstation 4") && 
+        <img src="https://icon-library.com/images/ps4-icon/ps4-icon-18.jpg" alt="playstation 4" />
+      }
+
+      {
+        gameData.platforms.includes("playstation 5") && 
+        <img src="https://cdn2.iconfinder.com/data/icons/apple-products-2026/512/melon0-512.png" alt="playstation 5" />
       }   
       
       {
@@ -108,13 +144,6 @@ function Game({gameData}) {
         gameData.platforms.includes("ports") && 
         <img src="https://cdn-icons-png.flaticon.com/512/68/68802.png" alt="ports" />
       }  
-      </div>
-      <div className="aboutGameJournal">
-        <button>
-          <a href="/public/aboutGameJournal.html">
-            About Game Journal
-          </a>
-        </button>
       </div>
     </div>
   )
@@ -171,7 +200,7 @@ function App() {
     "release_date": ["November 5, 2007"],
     "genre": ["first-person shooter"],
     "rating": 3.3,
-    "platforms": ["windows", "macos", "playstation 3", "xbox 360", "wii u"],
+    "platforms": ["windows", "macos", "playstation 3", "xbox 360", "will u"],
     "modes": ["single-player", "multiplayer"],
     "publishers": "Activision",
     "developers": "Infinity Ward",
@@ -182,7 +211,7 @@ function App() {
     "release_date": ["April 12, 2012", "November 14, 2012", "December 14, 2012", "December 11, 2014", "September 6, 2012", "July 29, 2015"],
     "genre": ["puzzle"],
     "rating": 0.4,
-    "platforms": ["windows", "windows phone store", "macos", "lunux", "app store", "google play"],
+    "platforms": ["windows", "windows phone store", "macos", "linux", "app store", "google play"],
     "modes": ["N/A"],
     "publishers": "King",
     "developers": "King",
@@ -193,7 +222,7 @@ function App() {
     "release_date": ["July 9, 2013", "July 18, 2013"],
     "genre": ["MOBA"],
     "rating": 4.4,
-    "platforms": ["windows", "macos", "lunux"],
+    "platforms": ["windows", "macos", "linux"],
     "modes": ["multiplayer"],
     "publishers": "Valve",
     "developers": "Valve",
@@ -237,7 +266,7 @@ function App() {
     "release_date": ["May 29, 2014", "May 30, 2014", "April 28, 2017"],
     "genre": ["kart racing"],
     "rating": 4.0,
-    "platforms": ["wii u", "nintendo switch"],
+    "platforms": ["will u", "nintendo switch"],
     "modes": ["single-player", "multiplayer"],
     "publishers": "Nintendo",
     "developers": ["Nintendo EAD", "Nintendo EPD"],
@@ -324,12 +353,28 @@ function App() {
   const [listOfGames, setlistOfGames] = useState(initListOfGames);
 
   return (
-    <div className="populargames">                      
-      <div className="mostpopulargames">
-        <GameList listOfGames={listOfGames}/>
+    <div>
+      <Header></Header>
+      <div className="populargames">                      
+        <div className="mostpopulargames">
+          <GameList listOfGames={listOfGames}/>
+        </div>
       </div>
+      <Footer></Footer>
     </div>
   );
+}
+
+function Footer() {
+  return (
+    <footer>
+       <div classNmae="aboutGameJournal">
+        <button>
+          <a href="/static/aboutGameJournal.html">About Game Journal</a>
+        </button>
+      </div>
+    </footer>
+  )
 }
 
 export default App;
