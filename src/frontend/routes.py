@@ -1,5 +1,6 @@
 from fastapi import APIRouter, Request, Form, Depends, status, HTTPException
 from fastapi.responses import FileResponse
+from starlette.responses import RedirectResponse
 
 from database import get_db
 from models import hash_password
@@ -20,6 +21,10 @@ async def login():
 @router.get("/list_games")
 async def get_list_games():
 	return FileResponse("game-journal-fe/public/list_games.html")
+
+@router.get("/")
+async def get_index():
+	return RedirectResponse("/static/index.html")
 
 @router.post("/login")
 async def post_login(username: str = Form(), password: str = Form(), db: Session = Depends(get_db)):
