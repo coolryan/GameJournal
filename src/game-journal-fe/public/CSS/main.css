@@ -87,7 +87,6 @@ li {
 	}*/
 }
 
-
 /* Nav CSS */
 nav {
 	display: flex;
@@ -96,10 +95,20 @@ nav {
 	padding: 20px;
 	background-color: teal;
 	color: white;
-	}
+}
 
-/* About Game Journal link button CSS */
-.aboutGameJournal > button {
-  background-color: teal;
-  border-radius: 30px;
+/* About CSS */
+.aboutPage h1, p {
+	text-align: center;
+}
+
+/* Footer CSS */
+.footer{
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: rgb(235, 195, 64);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
 }

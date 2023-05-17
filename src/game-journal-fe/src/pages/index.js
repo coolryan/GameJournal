@@ -365,11 +365,8 @@ const Home = () => {
 function Footer() {
   return (
     <footer>
-       <div classNmae="aboutGameJournal">
-        <button>
-          <a href="/static/aboutGameJournal.html">About Game Journal</a>
-        </button>
-      </div>
+      Ryan Setaruddin<br/>
+      Software Developer
     </footer>
   )
 }
