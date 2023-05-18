@@ -101,3 +101,15 @@ nav {
 .aboutPage h1, p {
 	text-align: center;
 }
+
+/* Contact CSS */
+form .contactForm {
+	border-radius: 30px;
+}
+
+/*Footer CSS*/
+footer {
+	position: relative;
+	left: 0;
+	bottom: 0;
+}
