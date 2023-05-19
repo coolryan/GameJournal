@@ -8,12 +8,17 @@
 }
 body {
 	height: 100%;
+	width: 100%;
 	margin: 0;
 	font-family: Arial, Helvetica, sans-serif, cursive;
 	display: grid;
 	justify-items: center;
 	align-items: center;
 	background-color: royalblue;
+}
+
+#root {
+	width: 100%;
 }
 
 a {
@@ -30,71 +35,87 @@ li {
 
 /* APPLYING MEDIA QUERIES */
 
-@media (max-width: 768px) {
+input[type=checkbox] {
+	display: none;
+} 
 
-	/* LOGO */
-	.logo {
-		font-size: 32px;
-	}
-
-	/* NAVBAR MENU */
-	/*.menu {
-		display: flex;
-		gap: lem;
-		font-size: 18px;
-	}*/
-
-	/*.menu li:hover {
-		background-color: #4c9e9e;
-		border-radius: 5px;
-		transition: 0.3s ease;
-	}*/
-
-	/*.menu li {
-		padding: 5px 14px;
-	}*/
-
-	/* DROPDOWN MENU */
-	/*.services {
-		position: relative;
-	}*/
-
-	/*.dropdown {
-		background-color: rgb(1, 139, 0139);
-		padding: 1em 0;
-		position: absolute; 
-		display: none;
-		border-radius: 8px;
-		top: 35px;
-	}*/
-
-	/*.dropdown li + li {
-		margin-top: 10px;
-	}*/
-
-	/*.dropdown li {
-		padding: 0.5em 1em;
-		width: 8em;
-		text-align: center;
-	}*/
-
-	/*.dropdown li:hover {
-		background-color: #4c9e9e;
-	}*/
-
-	/*.services:hover .dropdown {
-		display: block;
-	}*/
+/* HAMBURGER MENU */
+.hamburger {
+	display: none;
+	font-size: 24px;
+	user-select: none;
 }
 
-/* Nav CSS */
-nav {
+/* NAVBAR MENU */
+.navbar {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	padding: 20px;
 	background-color: teal;
-	color: white;
+	color: #fff;
+	width: 100%;
+	border-bottom: black solid 5px;
+	border-radius: 30px;
+}
+
+.nav-links a {
+	color: #fff;
+}
+
+/* LOGO */
+.logo {
+	width: 30px;
+}
+
+.menu {
+	display: flex;
+	gap: 1em;
+	font-size: 18px;
+}
+
+.menu a:hover {
+	background-color: #4c9e9e;
+	border-radius: 5px;
+	transition: 0.3s ease;
+}
+
+.menu a {
+	padding: 5px 14px;
+}
+
+/* DROPDOWN MENU */
+
+@media (max-width: 768px) {
+
+	/* Media Navbar CSS */
+	.menu {
+		display:none;
+		position: absolute;
+		background-color:teal;
+		right: 0;
+		left: 0;
+		text-align: center;
+		padding: 16px 0;
+	}
+
+	.menu a:hover {
+		display: inline-block;
+		background-color:#4c9e9e;
+		transition: 0.3s ease;
+	}
+
+	.menu a + a {
+		margin-top: 12px;
+	}
+
+	input[type=checkbox]:checked ~ .menu {
+		display: block;
+	}
+
+	.hamburger {
+		display: block;
+	}
 }
 
 /* About CSS */
@@ -102,9 +123,39 @@ nav {
 	text-align: center;
 }
 
-/* Contact CSS */
-form .contactForm {
+.aboutPage > .linkbtn {
 	border-radius: 30px;
+	background-color: green;
+	font-size: 20px;
+	width: 100px;
+}
+
+.aboutPage > .linkbtn {
+	text-align: center;
+}
+
+.aboutPage > .linkbtn a:hover {
+	border-radius: 30px;
+	background-color: deeppink;
+}
+
+/* Contact CSS */
+.contactForm {
+	text-align: center;
+}
+
+.contactForm > input,textarea {
+	border-radius: 30px;
+	width: 25%;
+	min-width: 200px;
+	padding: 5px;
+	font-size: 20px;
+}
+
+.contactForm > .submitbtn {
+	border-radius: 30px;
+	background-color: green;
+	padding: 14px;
 }
 
 /*Footer CSS*/

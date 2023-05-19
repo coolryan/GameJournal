@@ -7,6 +7,9 @@ const About = () => {
   		<p>
   			Game Journal is about content creators and gamers to upload and review their favortie video games on online.<br/>
   		</p>
+      <button className="linkbtn">
+        <a href="https://github.com/coolryan/GameJournal">Click Me!</a>
+      </button>
     </div>
   );
 };
