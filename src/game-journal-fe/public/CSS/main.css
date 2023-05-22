@@ -119,24 +119,27 @@ input[type=checkbox] {
 }
 
 /* About CSS */
-.aboutPage h1, p {
+.aboutPage {
+	width: 300px;
+	margin: 100px;
 	text-align: center;
 }
 
 .aboutPage > .linkbtn {
+	text-align: center;
 	border-radius: 30px;
 	background-color: green;
 	font-size: 20px;
-	width: 100px;
+	width: 200px;
+	margin-top: 50px;
 }
-
-.aboutPage > .linkbtn {
-	text-align: center;
-}
-
 .aboutPage > .linkbtn a:hover {
 	border-radius: 30px;
 	background-color: deeppink;
+}
+
+.aboutPage > .linkbtn img{
+	width: 35px;
 }
 
 /* Contact CSS */
@@ -155,7 +158,7 @@ input[type=checkbox] {
 .contactForm > .submitbtn {
 	border-radius: 30px;
 	background-color: green;
-	padding: 14px;
+	padding: 20px;
 }
 
 /*Footer CSS*/
