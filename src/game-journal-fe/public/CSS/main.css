@@ -125,12 +125,17 @@ input[type=checkbox] {
 	text-align: center;
 }
 
+.aboutPage > p > span .emphasized {
+	font-style: italic;
+	text-decoration: underline;
+}
+
 .aboutPage > .linkbtn {
 	text-align: center;
 	border-radius: 30px;
 	background-color: green;
 	font-size: 20px;
-	width: 200px;
+	width: 400px;
 	margin-top: 50px;
 }
 .aboutPage > .linkbtn a:hover {
@@ -155,7 +160,7 @@ input[type=checkbox] {
 	font-size: 20px;
 }
 
-.contactForm > .submitbtn {
+.contactForm > .submitbtn:hover {
 	border-radius: 30px;
 	background-color: green;
 	padding: 20px;

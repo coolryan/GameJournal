@@ -9,16 +9,24 @@ const About = () => {
   		</p>
       <br/>
       <p>
-        My name is Ryan Setaruddin and am entry-level software developer.
-        I graduated and earned Bachlors of Science in Computer systems and information from Farmingdale State College.
-        I learned how to be programmer and now am looking for programming job in New York.
-        I have done few group projects from Farmingdale State College like e.g: Align web application, collaborative with five other classmates on a mentor web app to connect student mentors and student mentees with each other along with helpful resources.
+        <span className="emphasized">
+          My name is Ryan Setaruddin and am entry-level software developer.
+          I graduated and earned Bachlors of Science in Computer systems and information from Farmingdale State College.
+          I learned how to be programmer and now am looking for programming job in New York.
+          I have done few group projects from Farmingdale State College like
+          e.g: Align web application, collaborative with five other classmates on a mentor web app to connect student mentors
+          and student mentees with each other along with helpful resources.
+        </span>
       </p>
       <button className="linkbtn">
-        <a href="https://github.com/coolryan/GameJournal">View Source Code</a>
+        <a href="https://github.com/coolryan/GameJournal">View Source Code
+          <img src="https://cdn.icon-icons.com/icons2/2157/PNG/512/github_git_hub_logo_icon_132878.png" alt="GitHub"/>
+        </a>
       </button>
       <button className="linkbtn">
-        <a href="https://www.linkedin.com/in/ryan-setaruddin/">View<img src="https://static.vecteezy.com/system/resources/previews/017/339/624/original/linkedin-icon-free-png.png" alt="LinkedIn"/></a>
+        <a href="https://www.linkedin.com/in/ryan-setaruddin/">View
+          <img src="https://static.vecteezy.com/system/resources/previews/017/339/624/original/linkedin-icon-free-png.png" alt="LinkedIn"/>
+        </a>
       </button>
     </div>
   );

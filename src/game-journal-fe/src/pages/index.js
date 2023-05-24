@@ -1,5 +1,4 @@
-import React from 'react';
-import {useState} from 'react';
+import React, {useState} from 'react';
 
 function Header() {
   return (
@@ -365,10 +364,9 @@ const Home = () => {
 function Footer() {
   return (
     <footer>
-      Ryan Setaruddin<br/>
+      Ryan Setaruddin
       Software Developer
     </footer>
   )
 }
-  
 export default Home;

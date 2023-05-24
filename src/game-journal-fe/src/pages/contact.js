@@ -1,23 +1,68 @@
 import React, {useState} from 'react';
 
-const FORM_ENDPOINT = "";
+const FORM_ENDPOINT = "https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox";
   
 const Contact = () => {
 
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState();
 
-  const handleSubmit = () => {
-    setTimeout(() => {
-      setSubmitted(true);
-    }, 100);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // Anything you need to inject dynamically
+    const injectedData = {
+      DYNAMIC_DATA_EXAMPLE: 123,
+    };
+
+    const inputs = e.target.elements;
+    const data = {};
+
+    for (let i = 0; i < inputs.length; i++) {
+      if (inputs[i].name) {
+        data[inputs[i].name] = inputs[i].value;
+      }
+    }
+
+    Object.assign(data, injectedData);
+
+    fetch(FORM_ENDPOINT, {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    }).then((response) => {
+    // It's likely a spam/bot request, so bypass it to validate via captcha
+      if (response.status === 422) {
+        Object.keys(injectedData).forEach((key) => {
+          const el = document.createElement("input");
+          el.type = "hidden";
+          el.name = key;
+          el.value = injectedData[key];
+
+          e.target.appendChild(el);
+        });
+
+        e.target.submit();
+        throw new Error("Please finish the captcha challenge");
+      }
+
+      if (response.status !== 200) {
+        throw new Error(response.statusText);
+      }
+
+      return response.json();
+
+    }).then(() => setStatus("We'll be in touch soon.")).catch((err) => setStatus(err.toString()));
   };
 
-  if (submitted) {
+  if (status) {
 
     return (
       <div>
-        <div className="thankYouText">Thank You!</div>
-        <div className="keepIntouchSoonText">We'll be in touch soon.</div>
+        <div className="contactForm">Thank You!</div>
+        <div className="contactForm">{status}</div>
       </div>
     );
   }

@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import Navbar from './components/Navbar';
+// import Footer from './components/Footer';
 import { BrowserRouter as Router, Routes, Route}
     from 'react-router-dom';
 import Home from './pages';
@@ -19,5 +20,7 @@ function App() {
     </Routes>
     </Router>
   );
+  
+  // <Footer/>
 }
 export default App;
