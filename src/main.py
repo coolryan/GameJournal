@@ -68,7 +68,11 @@ def read_user(user_id: int, db: Session = Depends(get_db)):
 def test(db: Session = Depends(get_db)):
     db_user = crud.get_user_username(db, username="blackjack")
     print(f"Games: {db_user.games}")
-    
+
+@app.post("/contact/", response_model=schemas.ContactForm)
+def _get_form(contact: schemas.ContactForm):
+    print(contact.name, contact.email, contact.message)
+    return contact
 
 # if __name__ == '__main__':
 #     uvicorn.run("src.main:app", host="127.0.0.1", port=8000, reload=True)

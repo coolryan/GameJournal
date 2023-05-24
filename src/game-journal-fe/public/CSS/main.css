@@ -120,8 +120,8 @@ input[type=checkbox] {
 
 /* About CSS */
 .aboutPage {
-	width: 300px;
-	margin: 100px;
+	width: 60%;
+	margin: auto;
 	text-align: center;
 }
 
@@ -135,10 +135,13 @@ input[type=checkbox] {
 	border-radius: 30px;
 	background-color: green;
 	font-size: 20px;
-	width: 400px;
-	margin-top: 50px;
+	width: 35%;
+	min-width: 207px;
+	margin: 20px;
+	display: inline-block;
 }
-.aboutPage > .linkbtn a:hover {
+
+.aboutPage > .linkbtn:hover {
 	border-radius: 30px;
 	background-color: deeppink;
 }
@@ -160,7 +163,7 @@ input[type=checkbox] {
 	font-size: 20px;
 }
 
-.contactForm > .submitbtn:hover {
+.contactForm > .submitbtn {
 	border-radius: 30px;
 	background-color: green;
 	padding: 20px;

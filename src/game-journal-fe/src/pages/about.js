@@ -3,6 +3,16 @@ import React from "react";
 const About = () => {
   return (
     <div className="aboutPage">
+      <button className="linkbtn">
+        <a href="https://github.com/coolryan/GameJournal">View Source Code
+          <img src="https://cdn.icon-icons.com/icons2/2157/PNG/512/github_git_hub_logo_icon_132878.png" alt="GitHub"/>
+        </a>
+      </button>
+      <button className="linkbtn">
+        <a href="https://www.linkedin.com/in/ryan-setaruddin/">View
+          <img src="https://static.vecteezy.com/system/resources/previews/017/339/624/original/linkedin-icon-free-png.png" alt="LinkedIn"/>
+        </a>
+      </button>
       <h1>About Game Journal</h1>
   		<p>
   			Game Journal is about content creators and gamers to upload and review their favortie video games on online.<br/>
@@ -18,16 +28,6 @@ const About = () => {
           and student mentees with each other along with helpful resources.
         </span>
       </p>
-      <button className="linkbtn">
-        <a href="https://github.com/coolryan/GameJournal">View Source Code
-          <img src="https://cdn.icon-icons.com/icons2/2157/PNG/512/github_git_hub_logo_icon_132878.png" alt="GitHub"/>
-        </a>
-      </button>
-      <button className="linkbtn">
-        <a href="https://www.linkedin.com/in/ryan-setaruddin/">View
-          <img src="https://static.vecteezy.com/system/resources/previews/017/339/624/original/linkedin-icon-free-png.png" alt="LinkedIn"/>
-        </a>
-      </button>
     </div>
   );
 };

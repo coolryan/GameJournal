@@ -33,3 +33,13 @@ class User(UserBase):
 	class Config:
 		"""docstring for Config"""
 		orm_mode = True
+
+class ContactForm(BaseModel):
+	"""docstring for ContactForme"""
+	name: str
+	email: str
+	message: str
+
+	class Config:
+		"""docstring for Config"""
+		orm_mode = True

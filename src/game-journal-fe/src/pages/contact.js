@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-const FORM_ENDPOINT = "https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox";
+const FORM_ENDPOINT = "";
   
 const Contact = () => {
 
@@ -8,11 +8,6 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    // Anything you need to inject dynamically
-    const injectedData = {
-      DYNAMIC_DATA_EXAMPLE: 123,
-    };
 
     const inputs = e.target.elements;
     const data = {};
@@ -23,8 +18,6 @@ const Contact = () => {
       }
     }
 
-    Object.assign(data, injectedData);
-
     fetch(FORM_ENDPOINT, {
       method: "POST",
       headers: {
@@ -33,25 +26,10 @@ const Contact = () => {
       },
       body: JSON.stringify(data),
     }).then((response) => {
-    // It's likely a spam/bot request, so bypass it to validate via captcha
-      if (response.status === 422) {
-        Object.keys(injectedData).forEach((key) => {
-          const el = document.createElement("input");
-          el.type = "hidden";
-          el.name = key;
-          el.value = injectedData[key];
-
-          e.target.appendChild(el);
-        });
-
-        e.target.submit();
-        throw new Error("Please finish the captcha challenge");
-      }
-
       if (response.status !== 200) {
         throw new Error(response.statusText);
       }
-
+      console.log(response.json());
       return response.json();
 
     }).then(() => setStatus("We'll be in touch soon.")).catch((err) => setStatus(err.toString()));
@@ -68,7 +46,7 @@ const Contact = () => {
   }
 
   return (
-    <form action={FORM_ENDPOINT} onSubmit={handleSubmit} method="POST" target="_blank">
+    <form action={FORM_ENDPOINT} onSubmit={handleSubmit} method="POST">
       <br/>
       <div className="contactForm">
         <input type="text" placeholder="Your name" name="name" required />
