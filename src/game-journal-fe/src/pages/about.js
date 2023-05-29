@@ -1,6 +1,10 @@
 import React from "react";
-  
+import {useNavigate} from "react-router-dom";
+
 const About = () => {
+
+  const navigate = useNavigate();
+
   return (
     <div className="aboutPage">
       <button className="linkbtn">
@@ -13,6 +17,7 @@ const About = () => {
           <img src="https://static.vecteezy.com/system/resources/previews/017/339/624/original/linkedin-icon-free-png.png" alt="LinkedIn"/>
         </a>
       </button>
+      <button className="linkbtn" onClick={()=>navigate(-1)}>Go Back Home</button>
       <h1>About Game Journal</h1>
   		<p>
   			Game Journal is about content creators and gamers to upload and review their favortie video games on online.<br/>
@@ -32,4 +37,4 @@ const About = () => {
   );
 };
   
-export default About;
+export default About
