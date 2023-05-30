@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-const FORM_ENDPOINT = "";
+const FORM_ENDPOINT = "/contact/";
   
 const Contact = () => {
 
@@ -29,7 +29,6 @@ const Contact = () => {
       if (response.status !== 200) {
         throw new Error(response.statusText);
       }
-      console.log(response.json());
       return response.json();
 
     }).then(() => setStatus("We'll be in touch soon.")).catch((err) => setStatus(err.toString()));
@@ -46,7 +45,7 @@ const Contact = () => {
   }
 
   return (
-    <form action={FORM_ENDPOINT} onSubmit={handleSubmit} method="POST">
+    <form onSubmit={handleSubmit} method="POST">
       <br/>
       <div className="contactForm">
         <input type="text" placeholder="Your name" name="name" required />
