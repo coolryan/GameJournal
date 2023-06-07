@@ -18,10 +18,9 @@ function App() {
         <Route exact path='/' exact element={<Home />} />
         <Route path='/about' element={<About/>} />
         <Route path='/contact' element={<Contact/>} />
+        {/*<Route path='/footer' element={<Footer/>} />*/}
     </Routes>
     </Router>
   );
-  
-  // <Footer/>
 }
 export default App;

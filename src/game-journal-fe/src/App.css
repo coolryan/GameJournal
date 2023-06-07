@@ -110,3 +110,81 @@ button .redirectToAboutbtn:hover {
 .titleHeader > h1 {
   text-align: center;
 }
+
+/* Footer CSS */
+
+/* Box_footer CSS */
+.box_footer {
+  padding: 80px 60px;
+  background-color: black;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.box_footer > h1 {
+  color: green;
+  text-align: center;
+  margin-top: -50px;
+}
+
+/* footer container CSS */
+.footer_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.footer_container > .footer_row {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(185px, 1fr));
+  grid-gap: 20px;
+}
+
+.footer_container > .footer_row > .footer_column {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-left: 60px;
+}
+
+.footer_container > .footer_row > .footer_column > .footer_heading {
+  font-size: 24px;
+  color: #fff;
+  margin-bottom: 40px;
+  font-weight: bold;
+}
+
+.footer_container > .footer_row > .footer_column > .footer_link{
+  color: #fff;
+  margin-bottom: 20px;
+  font-size: 18px;
+  text-decoration: none;
+}
+.footer_container > .footer_row > .footer_column > .footer_link:hover{
+  color: green;
+  transition: 200ms ease-in;
+}
+
+.footer_container > .footer_row > .footer_column > .footer_link span{
+  margin-left: 10px;
+}
+
+/* Media queries CSS */
+@media(max-width: 1000px) {
+  .box_footer {
+    padding: 70px 30px;
+  }
+  .box_footer h1 {
+    color: green;
+    text-align: center;
+    margin-top: -50px;
+  }
+  .footer_container > .footer_row {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 20px;
+  }
+}

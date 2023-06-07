@@ -2,71 +2,36 @@ import React from "react";
 
 const Footer = () => {
 	return (
-		// <Box>
-	    //     <h1 style={{ color: "green", textAlign: "center", marginTop: "-50px" }}>
-	    //       Game Journal
-	    //     </h1>
-	    //     <Container>
-	    //       <Row>
-	    //         <Column>
-	    //           <Heading>About Us</Heading>
-	    //           <FooterLink href="#">Aim</FooterLink>
-	    //           <FooterLink href="#">Vision</FooterLink>
-	    //           <FooterLink href="#">Testimonials</FooterLink>
+		// <Box className="box_footer">
+	    //     <h1>Game Journal</h1>
+	    //     <Container className="footer_container">
+	    //       <Row className="footer_row">
+	    //         <Column className="footer_column">
+	    //           <Heading className="footer_heading">About Us</Heading>
+	    //           <FooterLink className="footer_links" href="#">Aim</FooterLink>
+	    //           <FooterLink className="footer_links" href="#">Vision</FooterLink>
+	    //           <FooterLink className="footer_links" href="#">Testimonials</FooterLink>
 	    //         </Column>
-	    //         <Column>
-	    //           <Heading>Services</Heading>
-	    //           <FooterLink href="#">Writing</FooterLink>
-	    //           <FooterLink href="#">Internships</FooterLink>
-	    //           <FooterLink href="#">Coding</FooterLink>
-	    //           <FooterLink href="#">Teaching</FooterLink>
+	    //         <Column className="footer_column">
+	    //           <Heading className="footer_heading">Services</Heading>
+	    //           <FooterLink className="footer_link" href="#">Writing</FooterLink>
+	    //           <FooterLink className="footer_link" href="#">Internships</FooterLink>
+	    //           <FooterLink className="footer_link" href="#">Coding</FooterLink>
+	    //           <FooterLink className="footer_link" href="#">Teaching</FooterLink>
 	    //         </Column>
-	    //         <Column>
-	    //           <Heading>Contact Us</Heading>
-	    //           <FooterLink href="#">Uttar Pradesh</FooterLink>
-	    //           <FooterLink href="#">Ahemdabad</FooterLink>
-	    //           <FooterLink href="#">Indore</FooterLink>
-	    //           <FooterLink href="#">Mumbai</FooterLink>
+	    //         <Column className="footer_column">
+	    //           <Heading className="footer_heading">Contact Us</Heading>
+	    //           <FooterLink className="footer_link" href="#">Ryan Setaruddin</FooterLink>
 	    //         </Column>
-	    //         <Column>
-	    //           <Heading>Social Media</Heading>
-	    //           <FooterLink href="#">
-	    //             <i className="fab fa-facebook-f">
-	    //               <span style={{ marginLeft: "10px" }}>
-	    //                 Facebook
-	    //               </span>
-	    //             </i>
-	    //           </FooterLink>
-	    //           <FooterLink href="#">
-	    //             <i className="fab fa-instagram">
-	    //               <span style={{ marginLeft: "10px" }}>
-	    //                 Instagram
-	    //               </span>
-	    //             </i>
-	    //           </FooterLink>
-	    //           <FooterLink href="#">
-	    //             <i className="fab fa-twitter">
-	    //               <span style={{ marginLeft: "10px" }}>
-	    //                 Twitter
-	    //               </span>
-	    //             </i>
-	    //           </FooterLink>
-	    //           <FooterLink href="#">
-	    //             <i className="fab fa-youtube">
-	    //               <span style={{ marginLeft: "10px" }}>
-	    //                 Youtube
-	    //               </span>
-	    //             </i>
+	    //         <Column className="footer_column">
+	    //           <Heading className="footer_heading">Social Media</Heading>
+	    //           <FooterLink className="footer_link" href="#">
+	    //             <i><span>LinkedIn</span></i>
 	    //           </FooterLink>
 	    //         </Column>
 	    //       </Row>
 	    //     </Container>
       	// </Box>
-
-      <footer>
-      	Ryan Setaruddin
-      	Software Developer
-      </footer>
 	)
 };
 export default Footer;
