@@ -355,23 +355,12 @@ const Home = () => {
   return (
     <div>
       <Header></Header>
-      <button className="redirectToAboutbtn" onClick={()=>navigate("/about")}>About</button>
       <div className="populargames">                      
         <div className="mostpopulargames">
           <GameList listOfGames={listOfGames}/>
         </div>
       </div>
-      <Footer></Footer>
     </div>
   );
 };
-
-function Footer() {
-  return (
-    <footer>
-      Ryan Setaruddin
-      Software Developer
-    </footer>
-  )
-}
 export default Home;

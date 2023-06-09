@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import Navbar from './components/Navbar';
-// import Footer from './components/Footer';
+import Footer from './components/Footer';
 import { BrowserRouter as Router, Routes, Route}
     from 'react-router-dom';
 import Home from './pages';
@@ -18,8 +18,8 @@ function App() {
         <Route exact path='/' exact element={<Home />} />
         <Route path='/about' element={<About/>} />
         <Route path='/contact' element={<Contact/>} />
-        {/*<Route path='/footer' element={<Footer/>} />*/}
     </Routes>
+    <Footer />
     </Router>
   );
 }
