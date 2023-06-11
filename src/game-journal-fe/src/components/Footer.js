@@ -8,16 +8,14 @@ const Footer = () => {
 	          <div className="footer_row">
 	            <div className="footer_column">
 	              <p className="footer_heading">About Us</p>
-	              <a className="footer_links" href="#">Aim</a>
-	              <a className="footer_links" href="#">Vision</a>
-	              <a className="footer_links" href="#">Testimonials</a>
+	              <a className="footer_link" href="#">Aim</a>
+	              <a className="footer_link" href="#">Vision</a>
+	              <a className="footer_link" href="#">Testimonials</a>
 	            </div>
 	            <div className="footer_column">
 	              <p className="footer_heading">Services</p>
 	              <a className="footer_link" href="#">Writing</a>
-	              <a className="footer_link" href="#">Internships</a>
 	              <a className="footer_link" href="#">Coding</a>
-	              <a className="footer_link" href="#">Teaching</a>
 	            </div>
 	            <div className="footer_column">
 	              <p className="footer_heading">Contact Us</p>
@@ -25,8 +23,11 @@ const Footer = () => {
 	            </div>
 	            <div className="footer_column">
 	              <p className="footer_heading">Social Media</p>
-	              <a className="footer_link" href="#">
+	              <a className="footer_link" href="https://www.linkedin.com/in/ryan-setaruddin/">
 	                <i><span>LinkedIn</span></i>
+	              </a>
+	              <a className="footer_link" href="https://github.com/coolryan/GameJournal">
+	                <i><span>GitHub</span></i>
 	              </a>
 	            </div>
 	          </div>
