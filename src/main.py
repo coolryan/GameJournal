@@ -1,16 +1,19 @@
 #Main FastAPI app
+import os
+
 from fastapi import Depends, FastAPI, HTTPException
 from fastapi.staticfiles import StaticFiles
 # from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
 # from starlette.responses import RedirectResponse
+import uvicorn
 
 import crud, models, schemas
 from database import SessionLocal, engine, get_db
 from frontend import routes as frontend_routes
 
-# import uvicorn
 
+env = os.environ.get("ENVIRONMENT", "production")
 models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
@@ -23,7 +26,7 @@ app = FastAPI()
 #     allow_credentials=True,
 # )
 
-app.mount("/static", StaticFiles(directory = "game-journal-fe/build"), name = "static")
+app.mount("/static", StaticFiles(directory = "src/game-journal-fe/build"), name = "static")
 app.include_router(frontend_routes.router)
 
 @app.get("/healthz")
@@ -74,5 +77,17 @@ def _get_form(contact: schemas.ContactForm):
     print(contact.name, contact.email, contact.message)
     return contact
 
-# if __name__ == '__main__':
-#     uvicorn.run("src.main:app", host="127.0.0.1", port=8000, reload=True)
+
+if __name__ == '__main__':
+    kwargs = {
+        "host": "127.0.0.1",
+        "port": 8000,
+    }
+    if env.lower() == "local":
+        args = ["main:app"]
+        kwargs["reload"] = True
+    else:
+        args = [app]
+
+    uvicorn.run(*args, **kwargs)
+
