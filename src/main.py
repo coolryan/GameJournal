@@ -14,6 +14,7 @@ from frontend import routes as frontend_routes
 
 
 env = os.environ.get("ENVIRONMENT", "production")
+env = "development"
 models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
