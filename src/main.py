@@ -7,6 +7,7 @@ from fastapi.staticfiles import StaticFiles
 from sqlalchemy.orm import Session
 # from starlette.responses import RedirectResponse
 import uvicorn
+from mangum import Mangum
 
 import crud, models, schemas
 from database import SessionLocal, engine, get_db
@@ -92,3 +93,5 @@ if __name__ == '__main__':
 
     uvicorn.run(*args, **kwargs)
 
+else:
+    handler = Mangum(app)
