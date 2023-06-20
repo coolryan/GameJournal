@@ -28,12 +28,8 @@ app = FastAPI()
 #     allow_credentials=True,
 # )
 
-app.mount("/static", StaticFiles(directory = "src/game-journal-fe/build"), name = "static")
-app.include_router(frontend_routes.router)
-
-@app.get("/healthz")
-async def get_healthz():
-	return {"message": "Hello Bigger Applications!"}
+# app.mount("/static", StaticFiles(directory = "src/game-journal-fe/build"), name = "static")
+# app.include_router(frontend_routes.router)
 
 #Create your FastAPI path operations
 # @app.get("/")
